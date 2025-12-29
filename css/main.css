@@ -1394,6 +1394,9 @@ video {
 .w-1\/5 {
   width: 20%;
 }
+.w-28 {
+  width: 7rem;
+}
 .min-w-40 {
   min-width: 10rem;
 }
