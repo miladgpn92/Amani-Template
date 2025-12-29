@@ -140,8 +140,8 @@
                   </ul>
                 </div>
               </li>
-              <li class="group relative">
-                <a class="flex items-center gap-1 transition hover:text-sky-600" href="#">خشکبار</a>
+              <li class="group relative ">
+                <a class="flex items-center gap-1 transition hover:text-sky-600 " href="#">خشکبار</a>
               </li>
               <li class="group relative">
                 <a class="flex items-center gap-1 transition hover:text-sky-600" href="#">تنقلات</a>
@@ -161,58 +161,81 @@
             </ul>
           </nav>
 
-          <nav class="peer-checked:block hidden w-full pt-3 lg:hidden">
-            <ul class="space-y-2 text-base font-semibold text-gray-800">
-              <li><a class="block rounded-lg px-4 py-3 hover:bg-gray-50" href="#">صفحه اصلی</a></li>
-              <li class="rounded-lg border border-gray-100 bg-white">
-                <details class="group" open>
-                  <summary class="flex cursor-pointer items-center justify-between px-4 py-3 hover:bg-gray-50">
-                    آجیل
-                    <svg class="h-4 w-4 transition group-open:rotate-180" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
-                      <path stroke-linecap="round" stroke-linejoin="round" d="m6 9 6 6 6-6"></path>
-                    </svg>
-                  </summary>
-                  <div class="border-t border-gray-100">
-                    <details class="group/sub">
-                      <summary class="flex cursor-pointer items-center justify-between px-4 py-3 text-sm text-gray-700 hover:bg-gray-50">
-                        مغزها
-                        <svg class="h-4 w-4 transition group-open/sub:rotate-180" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+          <!-- Overlay پس‌زمینه -->
+          <div class="fixed inset-0 z-40 hidden bg-black/50 opacity-0 transition-opacity duration-300 peer-checked:block peer-checked:opacity-100 lg:hidden"></div>
+
+          <!-- منوی تمام صفحه -->
+          <nav class="fixed inset-0 z-50 hidden flex-col translate-x-full overflow-hidden bg-white transition-transform duration-300 peer-checked:flex peer-checked:translate-x-0 lg:hidden">
+            <div class="h-full w-full overflow-y-auto bg-white">
+              <!-- هدر منو با دکمه بستن -->
+              <div class="flex items-center justify-between border-b border-gray-200 bg-white px-4 py-4">
+                <h2 class="text-lg font-bold text-gray-900 flex items-center gap-2">
+                   
+                  <img src="/src/images/logo.png" class="w-6 h-6" alt="">
+                  خشکبار امانی
+                </h2>
+                <label for="nav-toggle" class="flex h-10 w-10 cursor-pointer items-center justify-center rounded-full border border-gray-200 text-gray-700 transition hover:bg-gray-50" aria-label="بستن منو">
+                  <svg class="h-6 w-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                  </svg>
+                </label>
+              </div>
+
+              <!-- محتوای منو -->
+              <div class="px-4 py-6">
+                <ul class="space-y-2 text-base font-semibold text-gray-800">
+                  <li><a class="block rounded-lg px-4 py-3 hover:bg-gray-50" href="#">صفحه اصلی</a></li>
+                  <li class="rounded-lg border border-gray-100 bg-white">
+                    <details class="group">
+                      <summary class="flex cursor-pointer items-center justify-between px-4 py-3 hover:bg-gray-50">
+                        آجیل
+                        <svg class="h-4 w-4 transition group-open:rotate-180" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+                          <path stroke-linecap="round" stroke-linejoin="round" d="m6 9 6 6 6-6"></path>
+                        </svg>
+                      </summary>
+                      <div class="border-t border-gray-100">
+                        <details class="group/sub">
+                          <summary class="flex cursor-pointer items-center justify-between px-4 py-3 text-sm text-gray-700 hover:bg-gray-50">
+                            مغزها
+                            <svg class="h-4 w-4 transition group-open/sub:rotate-180" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+                              <path stroke-linecap="round" stroke-linejoin="round" d="m6 9 6 6 6-6"></path>
+                            </svg>
+                          </summary>
+                          <div class="space-y-1 border-t border-gray-100 pb-3 pt-2 text-sm text-gray-700">
+                            <a class="block px-6 py-2 hover:bg-gray-50" href="#">پسته</a>
+                            <a class="block px-6 py-2 hover:bg-gray-50" href="#">بادام هندی</a>
+                            <a class="block px-6 py-2 hover:bg-gray-50" href="#">بادام درختی</a>
+                          </div>
+                        </details>
+                        <a class="block px-4 py-3 text-sm text-gray-700 hover:bg-gray-50" href="#">خشکبار مخلوط</a>
+                        <a class="block px-4 py-3 text-sm text-gray-700 hover:bg-gray-50" href="#">پک هدیه</a>
+                      </div>
+                    </details>
+                  </li>
+                  <li class="rounded-lg border border-gray-100 bg-white">
+                    <details class="group">
+                      <summary class="flex cursor-pointer items-center justify-between px-4 py-3 hover:bg-gray-50">
+                        میوه خشک
+                        <svg class="h-4 w-4 transition group-open:rotate-180" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
                           <path stroke-linecap="round" stroke-linejoin="round" d="m6 9 6 6 6-6"></path>
                         </svg>
                       </summary>
                       <div class="space-y-1 border-t border-gray-100 pb-3 pt-2 text-sm text-gray-700">
-                        <a class="block px-6 py-2 hover:bg-gray-50" href="#">پسته</a>
-                        <a class="block px-6 py-2 hover:bg-gray-50" href="#">بادام هندی</a>
-                        <a class="block px-6 py-2 hover:bg-gray-50" href="#">بادام درختی</a>
+                        <a class="block px-4 py-2 hover:bg-gray-50" href="#">انجیر</a>
+                        <a class="block px-4 py-2 hover:bg-gray-50" href="#">انبه</a>
+                        <a class="block px-4 py-2 hover:bg-gray-50" href="#">آناناس</a>
                       </div>
                     </details>
-                    <a class="block px-4 py-3 text-sm text-gray-700 hover:bg-gray-50" href="#">خشکبار مخلوط</a>
-                    <a class="block px-4 py-3 text-sm text-gray-700 hover:bg-gray-50" href="#">پک هدیه</a>
-                  </div>
-                </details>
-              </li>
-              <li class="rounded-lg border border-gray-100 bg-white">
-                <details class="group">
-                  <summary class="flex cursor-pointer items-center justify-between px-4 py-3 hover:bg-gray-50">
-                    میوه خشک
-                    <svg class="h-4 w-4 transition group-open:rotate-180" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
-                      <path stroke-linecap="round" stroke-linejoin="round" d="m6 9 6 6 6-6"></path>
-                    </svg>
-                  </summary>
-                  <div class="space-y-1 border-t border-gray-100 pb-3 pt-2 text-sm text-gray-700">
-                    <a class="block px-4 py-2 hover:bg-gray-50" href="#">انجیر</a>
-                    <a class="block px-4 py-2 hover:bg-gray-50" href="#">انبه</a>
-                    <a class="block px-4 py-2 hover:bg-gray-50" href="#">آناناس</a>
-                  </div>
-                </details>
-              </li>
-              <li><a class="block rounded-lg px-4 py-3 hover:bg-gray-50" href="#">خشکبار</a></li>
-              <li><a class="block rounded-lg px-4 py-3 hover:bg-gray-50" href="#">تنقلات</a></li>
-              <li><a class="block rounded-lg px-4 py-3 hover:bg-gray-50" href="#">شیرینی و شکلات</a></li>
-              <li><a class="block rounded-lg px-4 py-3 hover:bg-gray-50" href="#">پک سازمانی</a></li>
-              <li><a class="block rounded-lg px-4 py-3 hover:bg-gray-50" href="#">درباره ما</a></li>
-              <li><a class="block rounded-lg px-4 py-3 hover:bg-gray-50" href="#">تماس با ما</a></li>
-            </ul>
+                  </li>
+                  <li><a class="block px-4 py-3 hover:bg-gray-50 border-b border-gray-100 border-solid" href="#">خشکبار</a></li>
+                  <li><a class="block px-4 py-3 hover:bg-gray-50 border-b border-gray-100 border-solid" href="#">تنقلات</a></li>
+                  <li><a class="block px-4 py-3 hover:bg-gray-50 border-b border-gray-100 border-solid" href="#">شیرینی و شکلات</a></li>
+                  <li><a class="block px-4 py-3 hover:bg-gray-50 border-b border-gray-100 border-solid" href="#">پک سازمانی</a></li>
+                  <li><a class="block px-4 py-3 hover:bg-gray-50 border-b border-gray-100 border-solid" href="#">درباره ما</a></li>
+                  <li><a class="block px-4 py-3 hover:bg-gray-50 " href="#">تماس با ما</a></li>
+                </ul>
+              </div>
+            </div>
           </nav>
         </div>
       </div>
@@ -716,6 +739,20 @@
 
         document.addEventListener("click", () => {
           if (isOpen()) close();
+        });
+      })();
+
+      // قفل کردن اسکرول body هنگام باز بودن منو
+      (function () {
+        const navToggle = document.getElementById("nav-toggle");
+        if (!navToggle) return;
+
+        navToggle.addEventListener("change", function () {
+          if (this.checked) {
+            document.body.style.overflow = "hidden";
+          } else {
+            document.body.style.overflow = "";
+          }
         });
       })();
     </script>
