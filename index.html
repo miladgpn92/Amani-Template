@@ -87,24 +87,37 @@
                     <path stroke-linecap="round" d="m15.5 15.5 3.5 3.5"></path>
                   </svg>
                 </button>
-                <div data-search-panel-mobile class="hidden fixed left-0 right-0 top-2 z-50 rounded-xl border border-gray-200 bg-red-400 h-full p-3 shadow-xl">
-                  <div class="flex items-center gap-2 rounded-lg border border-gray-200 bg-gray-50 px-3 py-2 focus-within:border-sky-500 focus-within:bg-white">
-                    <svg class="h-4 w-4 text-gray-500" fill="none" stroke="currentColor" stroke-width="1.6" viewBox="0 0 24 24">
-                      <circle cx="11" cy="11" r="6"></circle>
-                      <path stroke-linecap="round" d="m15.5 15.5 3.5 3.5"></path>
-                    </svg>
-                    <input type="search" placeholder="جستجوی محصول..." class="w-full bg-transparent text-sm text-gray-800 outline-none placeholder:text-gray-400" />
-                  </div>
-                  <div class="mt-2 space-y-1 text-sm text-gray-700">
-                    <div class="text-xs text-gray-500">جستجوهای پیشنهادی</div>
-                    <button class="flex w-full items-center justify-between rounded-lg px-2 py-1.5 hover:bg-gray-50">
-                      <span>پسته احمدآقایی</span>
-                      <span class="text-[11px] text-gray-400">↩︎</span>
-                    </button>
-                    <button class="flex w-full items-center justify-between rounded-lg px-2 py-1.5 hover:bg-gray-50">
-                      <span>بادام هندی خام</span>
-                      <span class="text-[11px] text-gray-400">↩︎</span>
-                    </button>
+                <div data-search-panel-mobile class="hidden fixed left-0 right-0 top-0 z-50 h-full bg-black/50 p-4">
+                  <div class="mx-auto max-w-md rounded-xl bg-white p-4 shadow-xl">
+                    <!-- هدر با دکمه بستن -->
+                    <div class="mb-4 flex items-center justify-between">
+                      <h3 class="text-lg font-bold text-gray-900">جستجو</h3>
+                      <button data-search-close-mobile class="flex h-8 w-8 items-center justify-center rounded-full text-gray-500 transition hover:bg-gray-100 hover:text-gray-700" aria-label="بستن جستجو">
+                        <svg class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                          <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                        </svg>
+                      </button>
+                    </div>
+                    <!-- فیلد جستجو -->
+                    <div class="mb-4 flex items-center gap-2 rounded-lg border border-gray-200 bg-gray-50 px-3 py-2 focus-within:border-sky-500 focus-within:bg-white">
+                      <svg class="h-4 w-4 text-gray-500" fill="none" stroke="currentColor" stroke-width="1.6" viewBox="0 0 24 24">
+                        <circle cx="11" cy="11" r="6"></circle>
+                        <path stroke-linecap="round" d="m15.5 15.5 3.5 3.5"></path>
+                      </svg>
+                      <input type="search" placeholder="جستجوی محصول..." class="w-full bg-transparent text-sm text-gray-800 outline-none placeholder:text-gray-400" />
+                    </div>
+                    <!-- پیشنهادات -->
+                    <div class="space-y-1 text-sm text-gray-700">
+                      <div class="text-xs text-gray-500">جستجوهای پیشنهادی</div>
+                      <button class="flex w-full items-center justify-between rounded-lg px-2 py-1.5 hover:bg-gray-50">
+                        <span>پسته احمدآقایی</span>
+                        <span class="text-[11px] text-gray-400">↩︎</span>
+                      </button>
+                      <button class="flex w-full items-center justify-between rounded-lg px-2 py-1.5 hover:bg-gray-50">
+                        <span>بادام هندی خام</span>
+                        <span class="text-[11px] text-gray-400">↩︎</span>
+                      </button>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -200,7 +213,7 @@
                 <h2 class="text-lg font-bold text-gray-900 flex items-center gap-2">
                    
                   <img src="/src/images/logo.png" class="w-6 h-6" alt="">
-                  خشکبار امانیپپ
+                  خشکبار امانی
                 </h2>
                 <label for="nav-toggle" class="flex h-10 w-10 cursor-pointer items-center justify-center rounded-full border border-gray-200 text-gray-700 transition hover:bg-gray-50" aria-label="بستن منو">
                   <svg class="h-6 w-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
@@ -269,8 +282,8 @@
       </div>
     </header>
 
-    <main class="mx-auto max-w-5xl py-6 gap-4 flex">
-      <div class="w-2/3">
+    <main class="mx-auto w-full max-w-5xl py-6 gap-4 flex flex-col lg:flex-row px-4 lg:px-0 ">
+      <div class="lg:w-2/3 w-full">
           <div class="swiper">
             <div class="swiper-wrapper">
               <div class="swiper-slide">
@@ -303,7 +316,7 @@
             <div class="swiper-button-next"></div>
           </div>
       </div>
-      <div class="w-1/3 flex h-[440px] flex-col gap-4">
+      <div class="lg:w-1/3 w-full h-auto lg:h-[440px] flex lg:flex-col flex-row gap-4">
         <a href="#" class="w-full flex-1">
           <img src="/src/images/banner1.png" alt="خشکبار امانی" class="h-full w-full rounded-[12px] object-cover">
         </a>
@@ -313,8 +326,8 @@
       </div>
     </main>
 
-    <section class="category__section py-12">
-      <div class="mx-auto max-w-6xl px-4">
+    <section class="category__section py-12 lg:px-0 px-4">
+      <div class="mx-auto max-w-6xl ">
         <div class="category-swiper swiper">
           <div class="swiper-wrapper">
             <!-- اسلاید 4: باکس توضیحات -->
@@ -788,6 +801,7 @@
       (function () {
         const toggleBtnMobile = document.querySelector("[data-search-toggle-mobile]");
         const panelMobile = document.querySelector("[data-search-panel-mobile]");
+        const closeBtnMobile = document.querySelector("[data-search-close-mobile]");
         if (!toggleBtnMobile || !panelMobile) return;
 
         const open = () => panelMobile.classList.remove("hidden");
@@ -799,11 +813,25 @@
           isOpen() ? close() : open();
         });
 
-        panelMobile.addEventListener("click", (e) => e.stopPropagation());
+        if (closeBtnMobile) {
+          closeBtnMobile.addEventListener("click", (e) => {
+            e.stopPropagation();
+            close();
+          });
+        }
 
-        document.addEventListener("click", () => {
-          if (isOpen()) close();
+        // بستن با کلیک روی overlay
+        panelMobile.addEventListener("click", (e) => {
+          if (e.target === panelMobile) {
+            close();
+          }
         });
+
+        // بستن با کلیک روی محتوای پنل (جلوگیری از بستن)
+        const panelContent = panelMobile.querySelector(".max-w-md");
+        if (panelContent) {
+          panelContent.addEventListener("click", (e) => e.stopPropagation());
+        }
       })();
     </script>
   </body>
