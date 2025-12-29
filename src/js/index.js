@@ -27,8 +27,8 @@ if (sliderEl) {
 const categorySliderEl = document.querySelector(".category-swiper");
 if (categorySliderEl) {
   new Swiper(categorySliderEl, {
-    modules: [Pagination, Autoplay],
-    loop: true,
+    modules: [Autoplay],
+    loop: false,
     slidesPerView: 4,
     spaceBetween: 16,
     autoplay: {
@@ -48,10 +48,6 @@ if (categorySliderEl) {
         slidesPerView: 4,
         spaceBetween: 16,
       },
-    },
-    pagination: {
-      el: categorySliderEl.querySelector(".swiper-pagination"),
-      clickable: true,
     },
   });
 }
