@@ -78,14 +78,42 @@
                 <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"></path>
               </svg>
             </label>
-            <div class="flex items-center gap-6 text-sm text-gray-600">
-              <svg class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
-                <circle cx="11" cy="11" r="6"></circle>
-                <path stroke-linecap="round" d="m15.5 15.5 3.5 3.5"></path>
-              </svg>
-              <svg class="h-6 w-6" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M12 12a4 4 0 1 0-4-4 4 4 0 0 0 4 4Zm0 0c-4.418 0-8 2.239-8 5v1h16v-1c0-2.761-3.582-5-8-5Z"></path>
-              </svg>
+            <div class="flex items-center gap-4">
+              <!-- دکمه سرچ موبایل -->
+              <div class="relative">
+                <button data-search-toggle-mobile class="flex h-11 w-11 items-center justify-center rounded-full border border-gray-200 text-gray-700 transition hover:bg-gray-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sky-500" aria-label="جستجو">
+                  <svg class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
+                    <circle cx="11" cy="11" r="6"></circle>
+                    <path stroke-linecap="round" d="m15.5 15.5 3.5 3.5"></path>
+                  </svg>
+                </button>
+                <div data-search-panel-mobile class="hidden fixed left-0 right-0 top-2 z-50 rounded-xl border border-gray-200 bg-red-400 h-full p-3 shadow-xl">
+                  <div class="flex items-center gap-2 rounded-lg border border-gray-200 bg-gray-50 px-3 py-2 focus-within:border-sky-500 focus-within:bg-white">
+                    <svg class="h-4 w-4 text-gray-500" fill="none" stroke="currentColor" stroke-width="1.6" viewBox="0 0 24 24">
+                      <circle cx="11" cy="11" r="6"></circle>
+                      <path stroke-linecap="round" d="m15.5 15.5 3.5 3.5"></path>
+                    </svg>
+                    <input type="search" placeholder="جستجوی محصول..." class="w-full bg-transparent text-sm text-gray-800 outline-none placeholder:text-gray-400" />
+                  </div>
+                  <div class="mt-2 space-y-1 text-sm text-gray-700">
+                    <div class="text-xs text-gray-500">جستجوهای پیشنهادی</div>
+                    <button class="flex w-full items-center justify-between rounded-lg px-2 py-1.5 hover:bg-gray-50">
+                      <span>پسته احمدآقایی</span>
+                      <span class="text-[11px] text-gray-400">↩︎</span>
+                    </button>
+                    <button class="flex w-full items-center justify-between rounded-lg px-2 py-1.5 hover:bg-gray-50">
+                      <span>بادام هندی خام</span>
+                      <span class="text-[11px] text-gray-400">↩︎</span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <!-- دکمه حساب کاربری موبایل -->
+              <button class="flex h-11 w-11 items-center justify-center rounded-full border border-gray-200 text-gray-700 transition hover:bg-gray-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sky-500" aria-label="حساب کاربری">
+                <svg class="h-6 w-6" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M12 12a4 4 0 1 0-4-4 4 4 0 0 0 4 4Zm0 0c-4.418 0-8 2.239-8 5v1h16v-1c0-2.761-3.582-5-8-5Z"></path>
+                </svg>
+              </button>
             </div>
           </div>
 
@@ -172,7 +200,7 @@
                 <h2 class="text-lg font-bold text-gray-900 flex items-center gap-2">
                    
                   <img src="/src/images/logo.png" class="w-6 h-6" alt="">
-                  خشکبار امانی
+                  خشکبار امانیپپ
                 </h2>
                 <label for="nav-toggle" class="flex h-10 w-10 cursor-pointer items-center justify-center rounded-full border border-gray-200 text-gray-700 transition hover:bg-gray-50" aria-label="بستن منو">
                   <svg class="h-6 w-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
@@ -753,6 +781,28 @@
           } else {
             document.body.style.overflow = "";
           }
+        });
+      })();
+
+      // اسکریپت سرچ موبایل
+      (function () {
+        const toggleBtnMobile = document.querySelector("[data-search-toggle-mobile]");
+        const panelMobile = document.querySelector("[data-search-panel-mobile]");
+        if (!toggleBtnMobile || !panelMobile) return;
+
+        const open = () => panelMobile.classList.remove("hidden");
+        const close = () => panelMobile.classList.add("hidden");
+        const isOpen = () => !panelMobile.classList.contains("hidden");
+
+        toggleBtnMobile.addEventListener("click", (e) => {
+          e.stopPropagation();
+          isOpen() ? close() : open();
+        });
+
+        panelMobile.addEventListener("click", (e) => e.stopPropagation());
+
+        document.addEventListener("click", () => {
+          if (isOpen()) close();
         });
       })();
     </script>
