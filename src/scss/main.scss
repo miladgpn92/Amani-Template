@@ -29,3 +29,13 @@ body {
   opacity: 1;
   transform: rotate(45deg);
 }
+
+.swiper-button-next,
+.swiper-button-prev {
+  color: white !important;
+}
+
+.swiper-button-next:after,
+.swiper-button-prev:after {
+  color: white !important;
+}
