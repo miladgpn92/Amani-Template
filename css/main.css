@@ -1319,6 +1319,12 @@ video {
 .h-\[200px\] {
   height: 200px;
 }
+.h-36 {
+  height: 9rem;
+}
+.h-48 {
+  height: 12rem;
+}
 .max-h-full {
   max-height: 100%;
 }
@@ -1480,6 +1486,9 @@ video {
 }
 .overflow-y-auto {
   overflow-y: auto;
+}
+.whitespace-normal {
+  white-space: normal;
 }
 .rounded-2xl {
   border-radius: 1rem;
@@ -1718,6 +1727,9 @@ video {
 }
 .text-justify {
   text-align: justify;
+}
+.align-middle {
+  vertical-align: middle;
 }
 .text-2xl {
   font-size: 1.5rem;
@@ -2231,6 +2243,10 @@ body {
     gap: 2rem;
   }
 
+  .sm\:gap-2 {
+    gap: 0.5rem;
+  }
+
   .sm\:text-justify {
     text-align: justify;
   }
@@ -2356,6 +2372,10 @@ body {
 
   .lg\:w-\[16\%\] {
     width: 16%;
+  }
+
+  .lg\:w-\[40\%\] {
+    width: 40%;
   }
 
   .lg\:shrink-0 {
