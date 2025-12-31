@@ -1174,6 +1174,12 @@ video {
 .z-50 {
   z-index: 50;
 }
+.order-1 {
+  order: 1;
+}
+.order-2 {
+  order: 2;
+}
 .mx-auto {
   margin-left: auto;
   margin-right: auto;
@@ -1231,6 +1237,9 @@ video {
 }
 .mt-12 {
   margin-top: 3rem;
+}
+.mb-16 {
+  margin-bottom: 4rem;
 }
 .block {
   display: block;
@@ -1397,6 +1406,12 @@ video {
 }
 .max-w-md {
   max-width: 28rem;
+}
+.max-w-2xl {
+  max-width: 42rem;
+}
+.max-w-3xl {
+  max-width: 48rem;
 }
 .flex-1 {
   flex: 1 1 0%;
@@ -1615,9 +1630,17 @@ video {
 .bg-gradient-to-t {
   background-image: linear-gradient(to top, var(--tw-gradient-stops));
 }
+.bg-gradient-to-r {
+  background-image: linear-gradient(to right, var(--tw-gradient-stops));
+}
 .from-black\/65 {
   --tw-gradient-from: rgb(0 0 0 / 0.65) var(--tw-gradient-from-position);
   --tw-gradient-to: rgb(0 0 0 / 0) var(--tw-gradient-to-position);
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
+}
+.from-\[\#F5E6D3\] {
+  --tw-gradient-from: #F5E6D3 var(--tw-gradient-from-position);
+  --tw-gradient-to: rgb(245 230 211 / 0) var(--tw-gradient-to-position);
   --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
 }
 .via-black\/20 {
@@ -1626,6 +1649,9 @@ video {
 }
 .to-transparent {
   --tw-gradient-to: transparent var(--tw-gradient-to-position);
+}
+.to-\[\#E8D4B8\] {
+  --tw-gradient-to: #E8D4B8 var(--tw-gradient-to-position);
 }
 .bg-contain {
   background-size: contain;
@@ -2269,6 +2295,14 @@ body {
 
 @media (min-width: 768px) {
 
+  .md\:order-1 {
+    order: 1;
+  }
+
+  .md\:order-2 {
+    order: 2;
+  }
+
   .md\:h-\[440px\] {
     height: 440px;
   }
@@ -2289,6 +2323,14 @@ body {
     width: 4rem;
   }
 
+  .md\:grid-cols-2 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .md\:p-12 {
+    padding: 3rem;
+  }
+
   .md\:text-3xl {
     font-size: 1.875rem;
     line-height: 2.25rem;
@@ -2297,6 +2339,11 @@ body {
   .md\:text-2xl {
     font-size: 1.5rem;
     line-height: 2rem;
+  }
+
+  .md\:text-5xl {
+    font-size: 3rem;
+    line-height: 1;
   }
 }
 
@@ -2404,6 +2451,10 @@ body {
 
   .lg\:gap-6 {
     gap: 1.5rem;
+  }
+
+  .lg\:gap-12 {
+    gap: 3rem;
   }
 
   .lg\:px-0 {
