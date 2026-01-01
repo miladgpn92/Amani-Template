@@ -1385,6 +1385,9 @@ video {
 .min-h-\[600px\] {
   min-height: 600px;
 }
+.min-h-14 {
+  min-height: 3.5rem;
+}
 .w-10 {
   width: 2.5rem;
 }
@@ -1938,6 +1941,9 @@ video {
 }
 .\!leading-\[54px\] {
   line-height: 54px !important;
+}
+.leading-9 {
+  line-height: 2.25rem;
 }
 .tracking-wide {
   letter-spacing: 0.025em;
